@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  peptideai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: peptideai
+    container_name: peptideai
+    volumes:
+      # Mount data directory to persist data
+      - ./data:/app/data
+      # Mount outputs directory to persist model outputs
+      - ./outputs:/app/outputs
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    # Override the default command if needed
+    # command: python main.py --mode train --data_path data/Peptide.csv --device cuda
+    # For interactive use:
+    # command: bash
+    # stdin_open: true
+    # tty: true

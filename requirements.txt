@@ -1,0 +1,31 @@
+# Core dependencies
+numpy>=1.20.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+tqdm>=4.62.0
+
+# Deep learning
+# For CUDA 12.6 compatibility
+# Note: torch and torchvision are installed separately in setup.sh
+# torch==2.1.0
+# torchvision==0.16.0
+# torchdata and PyTorch Geometric are installed separately in setup.sh
+# torchdata==0.7.0
+# PyTorch Geometric is installed with CUDA support in setup.sh
+# torch-geometric>=2.3.0
+transformers>=4.30.0
+
+# Explainability
+captum>=0.5.0  # PyTorch model interpretability
+shap>=0.40.0
+lime>=0.2.0
+
+# Visualization
+tensorboard>=2.7.0
+networkx>=2.6.0
+
+# Utilities
+scipy<1.10.0  # Using older version to avoid GLIBCXX_3.4.29 dependency
+pyyaml>=6.0
